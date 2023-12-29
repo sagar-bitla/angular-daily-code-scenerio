@@ -1,0 +1,35 @@
+<div class="row header">
+    <div class="col-12">
+        <b style="font-size:30px;">Sorting,Pagination and Filtering</b>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered ">
+                <thead>
+                    <tr>
+                        <th>Sr.no</th>
+                        <th>Name</th>
+                        <th>User name</th>
+                        <th>Email id</th>
+                        <th>Phone no</th>
+                        <th>Website</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userArray;let srNo = index">
+                        <td>{{srNo+1}}</td>
+                        <td>{{user.name}} </td>
+                        <td>{{user.username}} </td>
+                        <td>{{user.email}} </td>
+                        <td> {{user.phone}} </td>
+                        <td>{{user.website}}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

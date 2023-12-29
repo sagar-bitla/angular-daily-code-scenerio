@@ -1,0 +1,11 @@
+i {
+    color: blue;
+    font-size: 20px;
+}
+
+.header{
+    background-color: aqua;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}

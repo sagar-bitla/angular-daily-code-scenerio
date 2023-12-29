@@ -1,0 +1,85 @@
+<div class="row header">
+    <div class="col-12">
+       <b style="font-size:30px;">Inline Table Edit With Validation</b> 
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered ">
+                <thead>
+                    <tr >
+                        <th>Sr.no</th>
+                        <th>Name</th>
+                        <th>User name</th>
+                        <th>Email id</th>
+                        <th>Phone no</th>
+                        <th>Website</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userArray;let srNo = index">
+                        <td>{{srNo+1}}</td>
+                        <td>
+                            <div *ngIf="user.isEdit">
+                                <input type="text" [(ngModel)]="user.name">
+                                <div class="text-danger" *ngIf="validationField(user.name)">
+                                    <span>Required</span>
+                                </div>
+                            </div>
+                            <div *ngIf="!user.isEdit">
+                                {{user.name}}
+                            </div>
+                        </td>
+                        <td>
+                            <div *ngIf="user.isEdit">
+                                <input type="text" [(ngModel)]="user.username">
+                                <div class="text-danger" *ngIf="validationUsername(user.username)!== ''">
+                                    <span>{{validationUsername(user.username)}}</span>
+                                </div>
+                            </div>
+                            <div *ngIf="!user.isEdit">
+                                {{user.username}}
+                            </div>
+                        </td>
+                        <td>
+                            <div *ngIf="user.isEdit">
+                                <input type="text" [(ngModel)]="user.email">
+                                <div class="text-danger" *ngIf="validationField(user.email)">
+                                    <span>Required</span>
+                                </div>
+                            </div>
+                            <div *ngIf="!user.isEdit">
+                                {{user.email}}
+                            </div>
+                        </td>
+                        <td>
+                            <div *ngIf="user.isEdit">
+                                <input type="text" [(ngModel)]="user.phone">
+                                <div class="text-danger" *ngIf="validationField(user.phone)">
+                                    <span>Required</span>
+                                </div>
+                            </div>
+                            <div *ngIf="!user.isEdit">
+                                {{user.phone}}
+                            </div>
+                        </td>
+                        <td>{{user.website}}</td>
+                        <td class="text-center">
+                            <div *ngIf="!user.isEdit">
+                                <i class="fa fa-pencil-square-o px-2" aria-hidden="true" (click)="onEdit(user)"></i>
+                            <i class="fa fa-trash-o " aria-hidden="true" (click)="onDelete(user)"></i>
+                            </div>
+                            <div *ngIf="user.isEdit">
+                               <button class="btn btn-success" [disabled]="validationForm(user)">Update</button>
+                               <button class="btn btn-success" (click)="onCancel(user)">Cancel</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
