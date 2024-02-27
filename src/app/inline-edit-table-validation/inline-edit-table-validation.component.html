@@ -69,7 +69,7 @@
                         <td class="text-center">
                             <div *ngIf="!user.isEdit">
                                 <i class="fa fa-pencil-square-o px-2" aria-hidden="true" (click)="onEdit(user)"></i>
-                            <i class="fa fa-trash-o " aria-hidden="true" (click)="onDelete(user)"></i>
+                                <i class="fa fa-trash-o " aria-hidden="true" (click)="onDelete(user)"></i>
                             </div>
                             <div *ngIf="user.isEdit">
                                <button class="btn btn-success" [disabled]="validationForm(user)">Update</button>

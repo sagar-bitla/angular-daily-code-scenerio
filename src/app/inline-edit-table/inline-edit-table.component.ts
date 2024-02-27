@@ -54,7 +54,7 @@ export class InlineEditTableComponent implements OnInit {
 
   onCancel(obj:any){
     const oldObj =JSON.parse(this.oldUserObj); //we have stored old data while click on cancel button on seperated variable 
-                                                //you can check uncomment thus line you clear the point
+                                                //you can check uncomment that  line you clear the point
     obj.name=oldObj.name;
     obj.username=oldObj.username;
     obj.isEdit=false
