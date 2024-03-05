@@ -20,7 +20,8 @@ export class InlineEditTableValidationComponent implements OnInit {
 
   loadAllUsers(){
     this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((res:any)=>{
-        this.userArray=res
+        this.userArray=res;
+        debugger;
         console.log("userarray",this.userArray)
     })
   }
