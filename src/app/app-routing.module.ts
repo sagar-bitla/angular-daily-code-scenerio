@@ -8,18 +8,22 @@ const routes: Routes = [
   {
     path: '',
     component: InlineEditTableComponent,
+    data : {title:'InlineEdit Table'}
   },
   {
     path: 'Home',
     component: InlineEditTableComponent,
+    data : {title:'InlineEdit Table 1'}
   },
   {
     path: 'inline-edit-table-validation',
     component: InlineEditTableValidationComponent,
+    data : {title:'InlineEdittable Validation'}
   },
   {
     path: 'serversidefilter',
     component: ServerSideFilterComponent,
+    data : {title:'ServerSide Filter '}
   },
 ];
 
