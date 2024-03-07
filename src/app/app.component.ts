@@ -22,10 +22,8 @@ export class AppComponent {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
     )
-      .subscribe(() => {
-
-        var rt = this.getChild(this.activatedRoute)
-
+    .subscribe(() => {
+      var rt = this.getChild(this.activatedRoute)
         rt.data.subscribe(data => {
           console.log(data);
           this.titleService.setTitle(data.title)
@@ -39,9 +37,7 @@ export class AppComponent {
       return this.getChild(activatedRoute.firstChild);
     } else {
       return activatedRoute;
-
     }
-
   }
 
 }
