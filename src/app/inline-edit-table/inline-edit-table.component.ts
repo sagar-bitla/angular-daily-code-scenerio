@@ -63,4 +63,6 @@ export class InlineEditTableComponent implements OnInit {
   onDelete(i:any){
      this.userArray.splice(i,1)
   }
+
+                    
 }
