@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-inline-edit-table-validation',
@@ -11,17 +12,17 @@ export class InlineEditTableValidationComponent implements OnInit {
   userArray:any[]=[]
   oldUserObj: string;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private title:Title) { }
 
   ngOnInit(): void {
 
     this.loadAllUsers()
+      this.title.setTitle("inlineEdit-table")
   }
 
   loadAllUsers(){
     this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((res:any)=>{
         this.userArray=res;
-        debugger;
         console.log("userarray",this.userArray)
     })
   }

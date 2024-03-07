@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-inline-edit-table',
@@ -12,10 +13,11 @@ export class InlineEditTableComponent implements OnInit {
   oldUserObj: string;
  
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private title:Title) { }
 
   ngOnInit(): void {
     this.loadAllUsers()
+       this.title.setTitle("inlineedittable")
   }
 
   loadAllUsers(){

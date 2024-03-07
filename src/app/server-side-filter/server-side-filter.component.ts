@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-server-side-filter',
@@ -9,10 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class ServerSideFilterComponent implements OnInit {
   userArray: any;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private title:Title) { }
 
   ngOnInit(): void {
     this.loadAllUsers()
+      this.title.setTitle("server-side-filter")
   }
 
   loadAllUsers(){
