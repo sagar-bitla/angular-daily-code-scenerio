@@ -17,7 +17,7 @@ export class InlineEditTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadAllUsers()
-       this.title.setTitle("inlineedittable")
+       this.title.setTitle("inlineedi")
   }
 
   loadAllUsers(){
@@ -44,7 +44,7 @@ export class InlineEditTableComponent implements OnInit {
       "username": " ",
       "email": " ",
       "phone": " ",
-      "website": " ",
+      "website": " "                                                                                                                                                                                                                                             ,
       "isEdit":true
     }
     this.userArray.push(obj)  // unshift means row added in first row
